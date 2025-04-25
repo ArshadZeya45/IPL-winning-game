@@ -1,63 +1,63 @@
 let arr = [
   {
     team: "MI",
-    primaryColor: "rgb(0, 75, 141)",
-    secondaryColor: "rgb(255, 209, 65) ",
+    primaryColor: "#24518A",
+    secondaryColor: "#F2A92D",
     image: "./assets/mi.jpg",
   },
   {
     team: "CSK",
-    primaryColor: "rgb(255, 217, 80)",
-    secondaryColor: "rgb(0, 166, 93) ",
+    primaryColor: "#DFA51E",
+    secondaryColor: "#354A69",
     image: "./assets/csk.jpg",
   },
   {
     team: "KKR",
-    primaryColor: "rgb(58, 34, 93)",
-    secondaryColor: "rgb(247, 213, 78)",
+    primaryColor: "#5D3076",
+    secondaryColor: "#EDB04C",
     image: "./assets/kkr.jpg",
   },
   {
     team: "RCB",
-    primaryColor: "rgb(225, 38, 28) ",
-    secondaryColor: "rgb(43, 42, 41) ",
+    primaryColor: "#D43912",
+    secondaryColor: "#1A2D3A",
     image: "./assets/rcb.webp",
   },
   {
     team: "SRH",
-    primaryColor: "rgb(238, 116, 41) ",
+    primaryColor: "#CF4500",
     secondaryColor: "rgb(34, 31, 33) ",
     image: "./assets/srh.jpg",
   },
   {
     team: "LSG",
-    primaryColor: "rgb(0, 166, 93) ",
-    secondaryColor: "rgb(0, 87, 226)",
+    primaryColor: "#304E6F",
+    secondaryColor: "#A05450",
     image: "./assets/lsg.jpg",
   },
   {
     team: "GT",
-    primaryColor: "rgb(0, 56, 168)  ",
-    secondaryColor: "rgb(255, 209, 65)",
+    primaryColor: "#152D45",
+    secondaryColor: "#A5692C",
     image: "./assets/gt.jpg",
   },
   {
     team: "RR",
-    primaryColor: "rgb(238, 41, 189) ",
-    secondaryColor: "rgb(7, 78, 162) ",
+    primaryColor: "#FF3659",
+    secondaryColor: "#375EB2",
     image: "./assets/rr.jpg",
   },
   {
     team: "DC",
-    primaryColor: "rgb(40, 41, 104) ",
-    secondaryColor: "rgb(215, 25, 33) ",
+    primaryColor: "#323F6B ",
+    secondaryColor: "#E26B7F",
     image: "./assets/dc.jpg",
   },
   {
     team: "PBKS",
-    primaryColor: "rgb(225, 38, 28)",
-    secondaryColor: "rgb(255, 209, 65) ",
-    image: "./assets/pkbs.jpg",
+    primaryColor: "#B1321A",
+    secondaryColor: "#CD9735",
+    image: "./assets/pbks.jpg",
   },
 ];
 
@@ -125,8 +125,10 @@ function play() {
       playBtn.style.display = "none";
     } 
   }
+  
 
-  else if(attempts.length>=5){
+
+  else if(attempts.length>5){
     gameText.innerHTML = "You Loose,better luck next time"
     gameText.style.color = 'red'
     playAgain.style.display = 'block'
