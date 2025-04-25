@@ -1,0 +1,14 @@
+
+.remove{
+    transform: translateX(-100%);
+    transition: all ease 0.7s;
+}
+
+.play-again{
+    display: none;
+}
+
+.info{
+    font-size: 15px;
+    color: red;
+}
