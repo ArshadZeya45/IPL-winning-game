@@ -6,28 +6,28 @@
     <title>IPL WINNER GAME</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black w-full h-full relative">
-    <div class="popup w-full px-7 py-15 bg-black absolute top-[50%] z-4 left-[50%] -translate-x-[50%] -translate-y-[50%] text-white flex flex-col gap-7">
+<body class="bg-black w-full  relative md:w-[70%] md:m-auto">
+    <div class="popup w-full px-7 py-15 bg-black absolute top-[50%] z-4 left-[50%] -translate-x-[50%] -translate-y-[50%] text-white flex flex-col gap-7 shadow-xl md:w-[30%]">
         <h3 class="text-center text-xl font-bold mb-4">Enter your favourite IPL Team</h3>
-        <p class="text-center text-sm text-nowrap">[ CSK , MI , RCB , PBKS , KKR , LSG , GT , SRH , RR , DC ]</p>
+        <p class="text-center text-sm ">[ CSK , MI , RCB , PBKS , KKR , LSG , GT , SRH , RR , DC ]</p>
         <p class="info"></p>
         <input type="text" class="bg-gray-300 text-black px-2 py-3 border-none outline-none text-xl rounded-md">
         <button  class=" ok bg-teal-500 py-3 font-bold rounded-md">OK</button>
     </div>
 
 
-    <div class="main px-7 py-7 relative w-full opacity-20">
+    <div class="main px-7 py-7 relative w-full opacity-10">
         <div class="remaining text-white ml-auto flex gap-3 text-md border-2 rounded-md w-fit px-4 py-2 items-center">
             <h2 class="text-sm">Total Attempts</h2>:<p class="num text-red-500 font-bold">0<h1>/ 5</h1></p>
         </div>
-        <div class="content w-full flex flex-col items-center justify-center">
+        <div class="content w-full flex flex-col items-center justify-center md:w-[40%] md:m-auto">
           <h1 class="game-text text-white mt-10 mb-10 text-3xl font-bold text-center">Let's start the Game</h1> 
-          <div class="card w-full flex flex-col items-center justify-center gap-5 bg-yellow-300 p-5 rounded-md">
-           <h2  class=" team-name text-[#10578E] text-4xl font-bold">CSK</h2>
-           <img src="https://pbs.twimg.com/media/GnJcdnEbsAABPbz?format=jpg&name=large" alt="" class=" team-img w-full aspect-square object-cover object-top rounded-md">
+          <div class="card w-full flex flex-col items-center justify-center gap-5 bg-zinc-600 p-5 rounded-md shadow-2xl ">
+           <h2  class=" team-name text-zinc-900 text-4xl font-bold">***</h2>
+           <img src="./assets/ipl.avif" alt="" class=" team-img w-full aspect-square object-cover object-top rounded-md">
           </div>
           <button disabled class="play-btn text-white text-xl bg-teal-600 w-full py-4 mt-7 rounded-md font-semibold ">LET'S PLAY</button>
-          <button disabled class="play-again text-white bg-teal-600 w-full text-xl py-4 mt-7 rounded-md font-semibold ">PLAY AGAIN</button>
+          <button  class="play-again text-white bg-teal-600 w-full text-xl py-4 mt-7 rounded-md font-semibold ">PLAY AGAIN</button>
         </div>
 
     </div>

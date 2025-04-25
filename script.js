@@ -21,7 +21,7 @@ let arr = [
     team: "RCB",
     primaryColor: "rgb(225, 38, 28) ",
     secondaryColor: "rgb(43, 42, 41) ",
-    image: "./assets/rcb.jpg",
+    image: "./assets/rcb.webp",
   },
   {
     team: "SRH",
@@ -57,7 +57,7 @@ let arr = [
     team: "PBKS",
     primaryColor: "rgb(225, 38, 28)",
     secondaryColor: "rgb(255, 209, 65) ",
-    image: "./assets/pkbs.webp",
+    image: "./assets/pkbs.jpg",
   },
 ];
 
@@ -108,38 +108,37 @@ function popop() {
 function play() {
   let randomIdx = Math.floor(Math.random() * arr.length);
   attempts.push(randomIdx);
-  if(attempts.length < 6){
-    let selected = arr[randomIdx];
+  if(attempts.length <= 5){
+  let selected = arr[randomIdx];
   teamName.innerHTML = selected.team;
   teamName.style.color = selected.secondaryColor;
   card.style.backgroundColor = selected.primaryColor;
   teamImg.src = selected.image;
 
   num.innerHTML = `${attempts.length}`;
-  console.log(attempts.length);
 
     if (inputValue == selected.team) {
       startConfetti();
-      gameText.innerHTML = "CONGRATS,YOU WON";
+      gameText.innerHTML = "CONGRATS,YOU WON!";
       gameText.style.color = "green";
-      playAgain.disabled = false;
       playAgain.style.display = "block";
       playBtn.style.display = "none";
     } 
-  }else{
-    playBtn.disabled = true
+  }
+
+  else if(attempts.length>=5){
     gameText.innerHTML = "You Loose,better luck next time"
     gameText.style.color = 'red'
     playAgain.style.display = 'block'
     playBtn.style.display = "none"
-
-    
   }
   
 }
 ok.addEventListener("click", popop);
 playBtn.addEventListener("click", play);
 
-playAgain.addEventListener("click", () => {
-  location.reload();
-});
+if(playAgain){
+  playAgain.addEventListener("click", () => {
+    location.reload();
+  });
+}
