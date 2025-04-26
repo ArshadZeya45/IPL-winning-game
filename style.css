@@ -12,3 +12,10 @@
     display: none;
     cursor: pointer;
 }
+
+audio{
+   transform: translateX(-1000%);
+}
+
+
+

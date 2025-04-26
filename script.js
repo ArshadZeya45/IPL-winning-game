@@ -73,6 +73,13 @@ let teamImg = document.querySelector(".team-img");
 let gameText = document.querySelector(".game-text");
 let playAgain = document.querySelector(".play-again");
 let num = document.querySelector(".num");
+let audio = document.querySelector('audio')
+let volumeBtn = document.querySelector('.volume-btn')
+let clapping = document.querySelector('.clapping')
+let loose = document.querySelector('.loose')
+
+
+audio.volume = 0.2
 
 let inputValue;
 
@@ -85,6 +92,21 @@ function startConfetti() {
     origin: { y: 0.6 },
   });
 }
+
+let flag = true
+volumeBtn.addEventListener('click',()=>{
+  if(flag == true){
+    audio.play()
+    volumeBtn.src = "./assets/volumeuo.png"
+    flag = false
+  }
+  else{
+    audio.pause()
+    volumeBtn.src = "./assets/volumedown.png"
+    flag = true
+
+  }
+})
 
 function popop() {
   inputValue = input.value.trim().toUpperCase();
@@ -119,20 +141,24 @@ function play() {
 
     if (inputValue == selected.team) {
       startConfetti();
-      gameText.innerHTML = "CONGRATS,YOU WON!";
+      gameText.innerHTML = "CONGRATS,YOU WON! 🏆";
       gameText.style.color = "green";
       playAgain.style.display = "block";
       playBtn.style.display = "none";
+      clapping.play()
+
     } 
   }
   
 
 
   else if(attempts.length>5){
-    gameText.innerHTML = "You Loose,better luck next time"
+    gameText.innerHTML = "You Loose,better luck next time 😒"
+    gameText.style.fontSize = '1.1rem'
     gameText.style.color = 'red'
     playAgain.style.display = 'block'
     playBtn.style.display = "none"
+    loose.play()
   }
   
 }
@@ -142,5 +168,6 @@ playBtn.addEventListener("click", play);
 if(playAgain){
   playAgain.addEventListener("click", () => {
     location.reload();
+    audio.play()
   });
 }
