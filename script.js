@@ -73,13 +73,12 @@ let teamImg = document.querySelector(".team-img");
 let gameText = document.querySelector(".game-text");
 let playAgain = document.querySelector(".play-again");
 let num = document.querySelector(".num");
-let audio = document.querySelector('audio')
-let volumeBtn = document.querySelector('.volume-btn')
 let clapping = document.querySelector('.clapping')
 let loose = document.querySelector('.loose')
 
 
-audio.volume = 0.2
+
+
 
 let inputValue;
 
@@ -93,20 +92,6 @@ function startConfetti() {
   });
 }
 
-let flag = true
-volumeBtn.addEventListener('click',()=>{
-  if(flag == true){
-    audio.play()
-    volumeBtn.src = "./assets/volumeuo.png"
-    flag = false
-  }
-  else{
-    audio.pause()
-    volumeBtn.src = "./assets/volumedown.png"
-    flag = true
-
-  }
-})
 
 function popop() {
   inputValue = input.value.trim().toUpperCase();
@@ -119,19 +104,20 @@ function popop() {
 
   if (!exists) {
     info.innerHTML = "Please enter a valid IPL Team";
-    inputValue = "";
-  } else {
+    input.value = "";
+    return;
+
+  } 
     popup.classList.add("remove");
     main.style.opacity = 1;
     playBtn.disabled = false;
-  }
 }
 
 function play() {
   let randomIdx = Math.floor(Math.random() * arr.length);
-  attempts.push(randomIdx);
-  if(attempts.length <= 5){
+  if(attempts.length < 5){
   let selected = arr[randomIdx];
+  attempts.push(selected.team)
   teamName.innerHTML = selected.team;
   teamName.style.color = selected.secondaryColor;
   card.style.backgroundColor = selected.primaryColor;
@@ -149,10 +135,7 @@ function play() {
 
     } 
   }
-  
-
-
-  else if(attempts.length>5){
+  else if(attempts.length>=5){
     gameText.innerHTML = "You Loose,better luck next time 😒"
     gameText.style.fontSize = '1.1rem'
     gameText.style.color = 'red'
@@ -168,6 +151,5 @@ playBtn.addEventListener("click", play);
 if(playAgain){
   playAgain.addEventListener("click", () => {
     location.reload();
-    audio.play()
   });
 }
