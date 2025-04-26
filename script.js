@@ -75,6 +75,7 @@ let playAgain = document.querySelector(".play-again");
 let num = document.querySelector(".num");
 let clapping = document.querySelector('.clapping')
 let loose = document.querySelector('.loose')
+let clickEffect = document.querySelector('.click-effect')
 
 
 
@@ -93,7 +94,7 @@ function startConfetti() {
 }
 
 
-function popop() {
+function popop(){
   inputValue = input.value.trim().toUpperCase();
   if (inputValue == "") {
     info.innerHTML = "Please enter your favourite team";
@@ -114,6 +115,7 @@ function popop() {
 }
 
 function play() {
+  clickEffect.play()
   let randomIdx = Math.floor(Math.random() * arr.length);
   if(attempts.length < 5){
   let selected = arr[randomIdx];
